@@ -22,7 +22,7 @@ To run this tool successfully, ensure the following packages are installed on yo
 
 1. Clone the repository and navigate to the project directory:
 ```bash
-git clone https://github.com
+git clone https://github.com/mraz0tix-code/NetPulse
 cd NetPulse
 ```
 
