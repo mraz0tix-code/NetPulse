@@ -2,6 +2,7 @@
 import os
 import subprocess
 import time
+import webbrowser
 
 def Hello():
     while True:
@@ -14,6 +15,8 @@ def Hello():
         print("3. Nmap usage mode (nmap)")
         print("4. Exit NetPulse")
         
+        print("\n5. Open mraz0tix's site")
+
         main_choice = input("\nSelect a menu option (1-4): > ")
          
         if main_choice == "1":
@@ -25,6 +28,10 @@ def Hello():
         elif main_choice == "4":
             print("\n[+] Bye Bye!")
             break
+        
+        elif main_choice == "5":
+            Site()
+        
         else:
             print("\n[!] Invalid choice. Please try again.")
             input("\nPress Enter to continue...")
@@ -138,6 +145,12 @@ def nmap_mode():
 
 def clear_screen():
     os.system("clear || cls")
+
+def Site():
+    print("Okay!")
+    webbrowser.open("https://mraz0tix-code.github.io/")
+    input("\nPress Enter to continue...")
+    clear_screen()
 
 if __name__ == "__main__":
     Hello()
