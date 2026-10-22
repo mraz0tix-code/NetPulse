@@ -3,9 +3,6 @@ import os
 import subprocess
 import time
 
-def clear_screen():
-    os.system("clear || cls")
-
 def Hello():
     while True:
         clear_screen()
@@ -16,7 +13,7 @@ def Hello():
         print("2. Check the ports menu")
         print("3. Nmap usage mode (nmap)")
         print("4. Exit NetPulse")
-
+        
         main_choice = input("\nSelect a menu option (1-4): > ")
          
         if main_choice == "1":
@@ -138,6 +135,9 @@ def nmap_mode():
         else:
             print("\n[!] Invalid choice. Please try again.")
             input("\nPress Enter to continue...")
+
+def clear_screen():
+    os.system("clear || cls")
 
 if __name__ == "__main__":
     Hello()
