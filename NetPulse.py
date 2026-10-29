@@ -4,7 +4,7 @@ import subprocess
 import time
 import webbrowser
 
-def Hello():
+def NetPulse_Main():
     while True:
         clear_screen()
         print("=" * 40)
@@ -17,7 +17,7 @@ def Hello():
         
         print("\n5. Open mraz0tix's site")
 
-        main_choice = input("\nSelect a menu option (1-4): > ")
+        main_choice = input("\nSelect a menu option (1-5): > ")
          
         if main_choice == "1":
             Internet_menu()
@@ -33,8 +33,8 @@ def Hello():
             Site()
         
         else:
-            print("\n[!] Invalid choice. Please try again.")
-            input("\nPress Enter to continue...")
+            print("\nNetPulse >> [!] Invalid choice. Please try again.")
+            input("\nNetPulse >> Press Enter to continue...")
 
 def Internet_menu():       
     while True:
@@ -55,32 +55,32 @@ def Internet_menu():
         elif choice_internet == "3":
             break
         else:
-            print("\n[!] Invalid choice. Please try again.")
-            input("\nPress Enter to continue...")
+            print("\nNetPulse >> [!] Invalid choice. Please try again.")
+            input("\nNetPulse >> Press Enter to continue...")
 
 def Internet_check_default():
-    print("\n[+] Okay! Already checking connection...")
+    print("\nNetPulse >> [+] Okay! Already checking connection...")
     time.sleep(0.5)
     try:
         subprocess.run(["kitty", "--hold", "ping", "-c", "3", "8.8.8.8"], check=True)
         print("[+] Internet connection checked successfully!")
     except FileNotFoundError:
-        print("\n[!] Error: 'kitty' terminal is not installed.")
-    input("\nPress Enter to continue...")
+        print("\nNetPulse >> [!] Error: 'kitty' terminal is not installed.")
+    input("\nNetPulse >> Press Enter to continue...")
 
 def Internet_check_custom():
     target = input("\nEnter website or IP to ping (e.g., google.com): > ")
     if target: 
-        print(f"\n[+] Pinging {target}...")
+        print(f"\nNetPulse >> [+] Pinging {target}...")
         time.sleep(0.5)
         try:
             subprocess.run(["kitty", "--hold", "ping", "-c", "4", target], check=True)
-            print("\n[+] Ping completed successfully!")
+            print("\nNetPulse >> [+] Ping completed successfully!")
         except FileNotFoundError:
-            print("\n[!] Error: 'kitty' terminal is not installed.")
+            print("\nNetPulse >> [!] Error: 'kitty' terminal is not installed.")
     else:
-        print("\n[!] Error: Empty target.")
-    input("\nPress Enter to continue...")
+        print("\nNetPulse >> [!] Error: Empty target.")
+    input("\nNetPulse >> Press Enter to continue...")
 
 def Ports_menu():
     while True:
@@ -94,19 +94,19 @@ def Ports_menu():
         main_choice_ports = input("\nSelect a menu option (1-2): > ")
         
         if main_choice_ports == "1":
-            print("\n[+] Okay! Already checking ports...")
+            print("\nNetPulse >> [+] Okay! Already checking ports...")
             time.sleep(0.5)
             try:
                 subprocess.run(["kitty", "--hold", "ss", "-tuln"], check=True)
-                print("[+] Ports checked successfully!")
+                print("NetPulse >> [+] Ports checked successfully!")
             except FileNotFoundError:
-                print("\n[!] Error: 'kitty' terminal is not installed.")
-            input("\nPress Enter to continue...")
+                print("\nNetPulse >> [!] Error: 'kitty' terminal is not installed.")
+            input("\nNetPulse >> Press Enter to continue...")
         elif main_choice_ports == "2":
             break
         else:
-            print("\n[!] Invalid choice. Please try again.")
-            input("\nPress Enter to continue...")
+            print("\nNetPulse >> [!] Invalid choice. Please try again.")
+            input("\nNetPulse >> Press Enter to continue...")
 
 def nmap_mode():
     while True:
@@ -131,26 +131,26 @@ def nmap_mode():
             try:
                 subprocess.run(cmd, check=True)
             except FileNotFoundError:
-                print("\n[!] Error: 'kitty' terminal emulator or 'nmap' is not installed.")
-                input("\nPress Enter to continue...")
+                print("\nNetPulse >> [!] Error: 'kitty' terminal emulator or 'nmap' is not installed.")
+                input("\nNetPulse >> Press Enter to continue...")
             except subprocess.CalledProcessError:
-                print("\n[!] Scan was interrupted or failed (maybe wrong sudo password?).")
-                input("\nPress Enter to continue...")
+                print("\nNetPulse >> [!] Scan was interrupted or failed (maybe wrong sudo password?).")
+                input("\nNetPulse >> Press Enter to continue...")
                 
         elif nmap_choice == "0":
             break
         else:
-            print("\n[!] Invalid choice. Please try again.")
-            input("\nPress Enter to continue...")
+            print("\nNetPulse >> [!] Invalid choice. Please try again.")
+            input("\nNetPulse >> Press Enter to continue...")
 
 def clear_screen():
     os.system("clear || cls")
 
 def Site():
-    print("Okay!")
+    print("NetPulse >> Okay!")
     webbrowser.open("https://mraz0tix-code.github.io/")
-    input("\nPress Enter to continue...")
+    input("\nNetPulse >> Press Enter to continue...")
     clear_screen()
 
 if __name__ == "__main__":
-    Hello()
+    NetPulse_Main()
