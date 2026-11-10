@@ -45,8 +45,9 @@ def Internet_menu():
         print("1. Run ping test (8.8.8.8)")
         print("2. Ping custom website or IP")  
         print("3. Back to main menu")
+        print("0. Connect via ssh (Security Shell)")
 
-        choice_internet = input("\nSelect a menu option (1-3): > ")  
+        choice_internet = input("\nSelect a menu option (0-3): > ")  
 
         if choice_internet == "1":
             Internet_check_default()  
@@ -54,9 +55,43 @@ def Internet_menu():
             Internet_check_custom()   
         elif choice_internet == "3":
             break
+        elif choice_internet == "0":
+            conection_via_ssh()
         else:
             print("\nNetPulse >> [!] Invalid choice. Please try again.")
             input("\nNetPulse >> Press Enter to continue...")
+
+def conection_via_ssh():
+    while True:
+        clear_screen()
+        print("=" * 40)
+        print("              SSH Conection menu")
+        print("=" * 40)
+        print("1. Connect with ip adress")
+        print("2. Back to main menu")  
+
+        choice_internet = input("\nSelect a menu option (1-2): > ")  
+   
+        if choice_internet == "1":
+            SSH_conection()   
+        elif choice_internet == "2":
+            break
+        else:
+            print("\nNetPulse >> [!] Invalid choice. Please try again.")
+            input("\nNetPulse >> Press Enter to continue...")
+
+def SSH_conection():
+    name = input("\nEnter username on system > ")
+    target = input("\nEnter IP of server > ")
+    if target:
+        time.sleep(0.5)
+        try:
+            subprocess.run(["kitty", "--hold", "ssh", f"{name}@{target}"], check=True)
+        except FileNotFoundError:
+            print("\nNetPulse >> [!] Error: 'kitty' terminal is not installed.")
+    else:
+        print("\nNetPulse >> [!] Error: Empty ip or username.")
+    input("\nNetPulse >> Press Enter to continue...")
 
 def Internet_check_default():
     print("\nNetPulse >> [+] Okay! Already checking connection...")
