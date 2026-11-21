@@ -178,8 +178,7 @@ def nmap_mode():
             print("\nNetPulse >> [!] Invalid choice. Please try again.")
             input("\nNetPulse >> Press Enter to continue...")
 
-def clear_screen():
-    os.system("clear || cls")
+
 
 def Site():
     print("NetPulse >> Okay!")
