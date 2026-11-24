@@ -13,6 +13,7 @@ This tool allows system administrators or network engineers to manage workflows 
 ## 🛠️ Dependencies
 
 To run this tool successfully, ensure the following packages are installed on your Linux system:
+- `python-rich` (partially)
 - `python3`
 - `kitty` (terminal emulator used to isolate processes with the `--hold` flag)
 - `nmap` (required for the subnet scanning mode)
