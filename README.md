@@ -29,12 +29,12 @@ cd NetPulse
 
 2. Make the script executable:
 ```bash
-chmod +x netpulse.py
+chmod +x NetPulse.py
 ```
 
 3. Run the tool:
 ```bash
-./netpulse.py
+./NetPulse.py
 ```
 
 ## ⚙️ Architecture
