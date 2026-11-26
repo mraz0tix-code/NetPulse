@@ -4,6 +4,9 @@ import subprocess
 import time
 import webbrowser
 
+def clear_screen():
+    os.system("clear || cls")
+
 def NetPulse_Main():
     while True:
         clear_screen()
@@ -147,7 +150,7 @@ def nmap_mode():
     while True:
         clear_screen()
         print("=" * 40)
-        print("           Nmap mode-menu")
+        print("            Nmap mode-menu")
         print("=" * 40)
         print("1. View your subnet (Scan custom target)")
         print("0. Back to main menu")
